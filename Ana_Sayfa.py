@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # --- AYARLAR ---
-API_KEY = "AIzaSyBRhmbrEb9l8DGMnO4uhzUIlp_D3hRWcIc"
+API_KEY = "BURAYA_KENDİ_APİNİZİ_GİRİN"
 genai.configure(api_key=API_KEY)
 
 dogru_model_adi = "gemini-1.5-flash"
@@ -139,27 +139,28 @@ if st.button("Sözleşmeyi Analiz Et 🔍", use_container_width=True):
     if not st.session_state.analiz_metni.strip():
         st.error("Önce bir sözleşme yükleyin!")
     else:
-        with st.spinner("Yapay Zeka analiz ediyor..."):
+        with st.spinner("Yapay Zeka sözleşmeyi hukuki açıdan değerlendiriyor..."):
             try:
                 prompt = f"""
-Sen hukuki metinleri analiz etmek ve KVKK uyumluluğunu denetlemek üzere tasarlanmış uzman bir Yapay Zeka Asistanısın. Asla resmi bir avukat olduğunu iddia etme. Şu formatta cevap ver:
+Sen hukuki metinleri analiz etmek ve Kişisel Verilerin Korunması Kanunu (KVKK) uyumluluğunu denetlemek üzere tasarlanmış uzman bir Yapay Zeka Asistanısın. Asla resmi bir avukat olduğunu iddia etme. Aşağıdaki metni oku ve sıradan bir vatandaşın anlayacağı dilde tam olarak şu formatta cevap ver:
+                
+                📋 1. Sözleşmenin Kimliği
+                - Sözleşme Türü: (Örn: Gizlilik, Hizmet Kullanım, Satış vb.)
+                - Taraflar: (Bu sözleşme kimler arasında yapılıyor?)
+                - Geçerlilik Süresi: (Ne zamana kadar geçerli? Metinde tarih yoksa "Belirtilmemiş" yaz.)
 
-📋 1. Sözleşmenin Kimliği
-- Sözleşme Türü:
-- Taraflar:
-- Geçerlilik Süresi:
+                📝 2. Sözleşmenin Genel Özeti
+                (Maksimum 2 cümle ile ana amacı açıkla.)
 
-📝 2. Sözleşmenin Genel Özeti
-(Maksimum 2 cümle)
+                🚨 3. Kullanıcı İçin Kritik Riskler
+                (Gizli ücretler, hesabın tek taraflı kapatılması, cayma hakkı zorlukları vb. riskleri madde madde yaz. KVKK risklerini buraya yazma, onu aşağıda değerlendir.)
 
-🚨 3. Kullanıcı İçin Kritik Riskler
-(Madde madde yaz)
+                🇹🇷 4. KVKK (Kişisel Veri) Uyumluluk Analizi
+                (Metni KVKK açısından incele. 'Açık Rıza' alınıyor mu? Veriler yurtdışına veya 3. şahıslara aktarılıyor mu? Veri saklama süresi belli mi? Eğer sözleşmede hiç KVKK veya veri maddesi yoksa "Bu metinde kişisel veri işleme şartlarına dair bir madde bulunmamaktadır" yaz.)
 
-🇹🇷 4. KVKK Uyumluluk Analizi
-(Açık Rıza, veri aktarımı, saklama süresi)
-
-🛡️ 5. Genel Güvenlik Skoru
-(10 üzerinden puan ve tek cümle açıklama)
+                🛡️ 5. Genel Güvenlik Skoru
+                (Kullanıcı hakları ve veri gizliliği açısından 10 üzerinden bir puan ver ve nedenini tek cümleyle açıkla.)
+                
 
 Sözleşme Metni:
 {st.session_state.analiz_metni}
@@ -186,4 +187,4 @@ if st.session_state.sozlesme_yuklendi:
         st.session_state.widget_key += 1
         st.rerun()
 
-st.caption("⚠️ **Yasal Uyarı:** Analizler bilgilendirme amaçlıdır. Resmi hukuki tavsiye niteliği taşımaz.")
+st.caption("⚠️ **Yasal Uyarı:** Bu platformdaki analizler yapay zeka (Gemini 1.5 Flash) tarafından üretilmektedir ve %100 doğruluk garantisi taşımaz. Üretilen içerikler bilgilendirme amaçlıdır ve resmi bir hukuki tavsiye niteliğinde değildir. Kesin hükümler için lütfen gerçek bir avukata danışın.")
