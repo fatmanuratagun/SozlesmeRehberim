@@ -10,3 +10,13 @@ Bu proje, dijital platformların karmaşık hukuki sözleşmelerini Üretken Yap
 
 ## 👥 Geliştirici Ekip
 Hilal, Fatma, Hayrunnisa, Serra
+## API Anahtarı Kurulumu
+
+Bu proje Gemini API kullanmaktadır.
+
+Projeyi çalıştırmadan önce `.streamlit` klasörü içinde `secrets.toml` dosyası oluşturun.
+
+Örnek:
+
+```toml
+GEMINI_API_KEY = "BURAYA_KENDI_GEMINI_API_KEYINIZI_YAZIN"
