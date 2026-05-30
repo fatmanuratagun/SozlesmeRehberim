@@ -2554,8 +2554,6 @@ Sen hukuki metinleri analiz etmek ve Kişisel Verilerin Korunması Kanunu (KVKK)
                 🇹🇷 4. KVKK (Kişisel Veri) Uyumluluk Analizi
                 (Metni KVKK açısından incele. 'Açık Rıza' alınıyor mu? Veriler yurtdışına veya 3. şahıslara aktarılıyor mu? Veri saklama süresi belli mi? Eğer sözleşmede hiç KVKK veya veri maddesi yoksa "Bu metinde kişisel veri işleme şartlarına dair bir madde bulunmamaktadır" yaz.)
 
-                🛡️ 5. Genel Güvenlik Skoru
-                (Kullanıcı hakları ve veri gizliliği açısından 10 üzerinden bir puan ver ve nedenini tek cümleyle açıkla.)
                 
 
 Sözleşme Metni:
