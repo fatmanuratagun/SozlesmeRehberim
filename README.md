@@ -1,22 +1,38 @@
-# 📄 Sözleşme Rehberim - AI Risk Analizi
-Bu proje, dijital platformların karmaşık hukuki sözleşmelerini Üretken Yapay Zeka (Gemini 1.5 Flash) kullanarak saniyeler içinde analiz eden, son kullanıcı odaklı bir MVP web uygulamasıdır.
-## 🚀 Kurulum ve Çalıştırma
-1. Gerekli kütüphaneleri yükleyin: pip install streamlit google-generativeai
-2. Kodu çalıştırmak için terminale yazın: streamlit run app.py
-## 🛠️ Kullanılan Teknolojiler
-- *Frontend:* Streamlit
-- *Yapay Zeka Motoru:* Google Gemini 1.5 Flash API
-- *Backend Dil:* Python
+📄 Sözleşme Rehberim - AI Risk Analizi
+Bu proje, dijital platformların karmaşık hukuki sözleşmelerini Üretken Yapay Zeka (Gemini 1.5 Flash) kullanarak saniyeler içinde analiz eden, son kullanıcı odaklı bir MVP web uygulamasıdır. İstanbul Gedik Üniversitesi CS Honors '26 etkinliği kapsamında geliştirilmiştir.
 
-## 👥 Geliştirici Ekip
-Hilal, Fatma, Hayrunnisa, Serra
-## API Anahtarı Kurulumu
+🔗 Canlı Uygulama: [Sözleşme Rehberim'i Deneyin](https://sozlesme-rehberim.streamlit.app/)
 
-Bu proje Gemini API kullanmaktadır.
+🎬 Proje Tanıtım Videosu: [YouTube Üzerinden İzleyin](https://www.youtube.com/watch?v=tkpqRrxR8sw)
 
-Projeyi çalıştırmadan önce `.streamlit` klasörü içinde `secrets.toml` dosyası oluşturun.
+🚀 Kurulum ve Çalıştırma (Yerelde Denemek İsteyenler İçin)
+Gerekli kütüphaneleri yükleyin:
 
-Örnek:
+Bash
+pip install streamlit google-generativeai beautifulsoup4 requests pypdf python-docx
+Kodu çalıştırmak için terminale yazın:
 
-```toml
+Bash
+streamlit run Ana_Sayfa.py
+🛠️ Kullanılan Teknolojiler
+Frontend: Streamlit
+
+Yapay Zeka Motoru: Google Gemini 1.5 Flash API
+
+Web Scraping: BeautifulSoup & Requests
+
+Backend Dil: Python
+
+🔑 API Anahtarı Kurulumu
+Bu proje sözleşme analizi için Google Gemini API kullanmaktadır. Projeyi kendi bilgisayarınızda çalıştırmadan önce .streamlit klasörü içinde secrets.toml dosyası oluşturun:
+
+Ini, TOML
 GEMINI_API_KEY = "BURAYA_KENDI_GEMINI_API_KEYINIZI_YAZIN"
+👥 Geliştirici Ekip (X Team)
+Fatma Nur Atagün
+
+Hayrunnisa Kaya
+
+Serra Çolak
+
+Hilal Nur Okur
