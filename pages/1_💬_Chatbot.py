@@ -217,6 +217,14 @@ def stil_yukle():
             font-size: 0.98rem;
             overflow-wrap: anywhere;
         }
+        .message-card {
+            position: relative;
+            backdrop-filter: blur(16px) saturate(1.08);
+            transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+        .message-card:hover {
+            transform: translateY(-1px);
+        }
         .message-card.user {
             background:
                 linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(8, 145, 178, 0.88));
@@ -231,6 +239,14 @@ def stil_yukle():
             border-color: rgba(125, 211, 252, 0.16);
             border-bottom-left-radius: 7px;
             box-shadow: 0 15px 36px rgba(0, 0, 0, 0.22), 0 0 24px rgba(56, 189, 248, 0.045);
+        }
+        .message-card.user:hover {
+            border-color: rgba(191, 219, 254, 0.36);
+            box-shadow: 0 20px 42px rgba(37, 99, 235, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
+        .message-card.assistant:hover {
+            border-color: rgba(125, 211, 252, 0.28);
+            box-shadow: 0 20px 46px rgba(0, 0, 0, 0.28), 0 0 28px rgba(56, 189, 248, 0.07);
         }
         .message-card h3 {
             color: #bfdbfe;
@@ -403,6 +419,111 @@ def stil_yukle():
             }
             .chat-panel {
                 padding: 14px;
+            }
+        }
+        /* UX polish: visual-only refinements for the chat surface. */
+        .chat-hero,
+        .chat-panel,
+        .empty-state {
+            border-color: rgba(148, 163, 184, 0.18) !important;
+            background:
+                linear-gradient(180deg, rgba(15, 23, 42, 0.66), rgba(8, 13, 26, 0.50)) !important;
+            box-shadow:
+                0 20px 58px rgba(0, 0, 0, 0.27),
+                inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+            backdrop-filter: blur(18px) saturate(1.08) !important;
+        }
+        .chat-panel {
+            padding: 22px;
+        }
+        .messages {
+            gap: 16px;
+        }
+        .message-card {
+            border-radius: 19px;
+            padding: 16px 18px;
+        }
+        .message-card.user {
+            background:
+                linear-gradient(135deg, rgba(37, 99, 235, 0.98), rgba(8, 145, 178, 0.90)) !important;
+            box-shadow:
+                0 16px 38px rgba(37, 99, 235, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+        }
+        .message-card.assistant {
+            background:
+                linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(8, 13, 26, 0.76)) !important;
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.24),
+                0 0 24px rgba(56, 189, 248, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+        }
+        div[data-testid="stChatInput"] > div {
+            border-color: rgba(103, 232, 249, 0.26) !important;
+            box-shadow:
+                0 18px 44px rgba(0, 0, 0, 0.26),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+        }
+        div[data-testid="stChatInput"] textarea {
+            border-color: rgba(103, 232, 249, 0.34) !important;
+            transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease !important;
+        }
+        div[data-testid="stChatInput"] textarea:hover {
+            border-color: rgba(125, 211, 252, 0.50) !important;
+        }
+        div[data-testid="stChatInput"] button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.18) !important;
+        }
+        @media (max-width: 720px) {
+            .main .block-container {
+                padding-top: 1.1rem !important;
+                padding-left: 0.9rem !important;
+                padding-right: 0.9rem !important;
+                padding-bottom: 5.5rem !important;
+            }
+            .chat-hero {
+                padding: 20px !important;
+                margin-bottom: 18px !important;
+                border-radius: 18px !important;
+            }
+            .chat-title {
+                font-size: clamp(2.05rem, 12vw, 3rem);
+                line-height: 1.04;
+            }
+            .chat-subtitle {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+            .chat-feature-row {
+                gap: 8px;
+            }
+            .chat-feature-chip,
+            .status-pill {
+                min-height: 34px;
+                padding: 7px 10px;
+                font-size: 0.8rem;
+            }
+            .chat-panel {
+                padding: 12px !important;
+                border-radius: 16px !important;
+            }
+            .messages {
+                gap: 12px;
+            }
+            .message-card {
+                max-width: 96%;
+                padding: 14px 15px;
+                border-radius: 16px;
+                font-size: 0.94rem;
+                line-height: 1.58;
+            }
+            div[data-testid="stChatInput"] {
+                padding: 0 0.65rem !important;
+            }
+            div[data-testid="stChatInput"] > div {
+                padding: 10px !important;
+                border-radius: 18px !important;
             }
         }
         </style>

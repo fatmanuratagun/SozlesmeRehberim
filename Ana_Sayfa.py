@@ -2360,6 +2360,117 @@ st.markdown(
             width: 100% !important;
         }
     }
+    /* UX polish: visual-only refinements for cards, inputs, and mobile spacing. */
+    .hero-shell,
+    div[data-testid="stTabs"],
+    .result-card,
+    .legal-note,
+    .uploaded-file-card,
+    .analysis-full-card,
+    div[data-testid="stExpander"],
+    div[data-testid="stVerticalBlockBorderWrapper"] {
+        border-color: rgba(148, 163, 184, 0.18) !important;
+        background:
+            linear-gradient(180deg, rgba(15, 23, 42, 0.66), rgba(8, 13, 26, 0.52)) !important;
+        box-shadow:
+            0 18px 54px rgba(0, 0, 0, 0.26),
+            inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+        backdrop-filter: blur(18px) saturate(1.08) !important;
+    }
+    .result-card,
+    .uploaded-file-card,
+    .analysis-full-card {
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease !important;
+    }
+    .result-card:hover,
+    .uploaded-file-card:hover,
+    .analysis-full-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(125, 211, 252, 0.30) !important;
+        box-shadow:
+            0 24px 64px rgba(0, 0, 0, 0.32),
+            0 0 28px rgba(56, 189, 248, 0.07),
+            inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+    }
+    .stButton > button,
+    .stDownloadButton > button {
+        min-height: 46px !important;
+        border-radius: 14px !important;
+        box-shadow:
+            0 14px 34px rgba(37, 99, 235, 0.20),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    }
+    .stButton > button:hover,
+    .stDownloadButton > button:hover {
+        border-color: rgba(125, 211, 252, 0.62) !important;
+        box-shadow:
+            0 20px 46px rgba(37, 99, 235, 0.26),
+            0 0 24px rgba(34, 211, 238, 0.09),
+            inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+    }
+    textarea,
+    input,
+    div[data-testid="stFileUploaderDropzone"] {
+        border-color: rgba(103, 232, 249, 0.28) !important;
+        background:
+            linear-gradient(180deg, rgba(8, 18, 38, 0.94), rgba(10, 24, 50, 0.82)) !important;
+        box-shadow:
+            inset 0 2px 10px rgba(0, 0, 0, 0.28),
+            0 12px 30px rgba(0, 0, 0, 0.20) !important;
+    }
+    textarea:hover,
+    input:hover,
+    div[data-testid="stFileUploaderDropzone"]:hover {
+        border-color: rgba(125, 211, 252, 0.44) !important;
+    }
+    textarea:focus,
+    input:focus {
+        border-color: rgba(103, 232, 249, 0.72) !important;
+        box-shadow:
+            0 0 0 3px rgba(34, 211, 238, 0.10),
+            0 18px 44px rgba(0, 0, 0, 0.26),
+            inset 0 2px 10px rgba(0, 0, 0, 0.30) !important;
+    }
+    @media (max-width: 720px) {
+        .main .block-container {
+            padding-top: 1.1rem !important;
+            padding-left: 0.9rem !important;
+            padding-right: 0.9rem !important;
+            padding-bottom: 3.5rem !important;
+        }
+        .hero-shell {
+            padding: 20px !important;
+            margin-bottom: 18px !important;
+            border-radius: 18px !important;
+        }
+        div[data-testid="stTabs"] {
+            padding: 12px !important;
+            border-radius: 16px !important;
+        }
+        div[data-testid="stTabs"] [role="tablist"] {
+            gap: 6px !important;
+            overflow-x: auto !important;
+            padding-bottom: 8px !important;
+        }
+        div[data-testid="stTabs"] [role="tab"] {
+            min-height: 40px !important;
+            padding: 0 12px !important;
+            white-space: nowrap !important;
+        }
+        .result-grid {
+            gap: 12px !important;
+        }
+        .result-card,
+        .legal-note,
+        .uploaded-file-card,
+        .analysis-full-card {
+            border-radius: 15px !important;
+            padding: 14px !important;
+        }
+        .section-title {
+            margin-top: 20px !important;
+        }
+    }
     </style>
     """,
     unsafe_allow_html=True,

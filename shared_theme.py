@@ -48,9 +48,6 @@ def load_shared_theme():
             display: none !important;
         }
         section[data-testid="stSidebar"]:not([aria-expanded="false"]) {
-            width: 230px !important;
-            min-width: 230px !important;
-            max-width: 230px !important;
             background:
                 linear-gradient(180deg, rgba(15, 23, 42, 0.84), rgba(2, 6, 23, 0.92)) !important;
             border-right: 1px solid rgba(148, 163, 184, 0.12) !important;
@@ -58,7 +55,6 @@ def load_shared_theme():
             backdrop-filter: blur(18px);
         }
         section[data-testid="stSidebar"]:not([aria-expanded="false"]) > div:first-child {
-            width: 230px !important;
             padding: 2.2rem 1.05rem 1.2rem !important;
         }
         .main .block-container {
@@ -112,6 +108,20 @@ def load_shared_theme():
             text-decoration: none !important;
             transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
         }
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a {
+            position: relative;
+            overflow: hidden;
+        }
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.16), transparent 62%);
+            opacity: 0;
+            transition: opacity 180ms ease;
+            pointer-events: none;
+        }
         section[data-testid="stSidebar"] [data-testid="stPageLink"] a p,
         section[data-testid="stSidebar"] a p {
             font-size: 0.96rem !important;
@@ -124,11 +134,26 @@ def load_shared_theme():
             font-size: 1.02rem !important;
             opacity: 0.86;
         }
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a span[class*="material"],
+        section[data-testid="stSidebar"] a span[class*="material"],
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a span[aria-hidden="true"],
+        section[data-testid="stSidebar"] a span[aria-hidden="true"],
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a svg,
+        section[data-testid="stSidebar"] a svg {
+            width: 22px !important;
+            min-width: 22px !important;
+            display: inline-grid !important;
+            place-items: center !important;
+            flex: 0 0 22px !important;
+        }
         section[data-testid="stSidebar"] [data-testid="stPageLink"] a:hover,
         section[data-testid="stSidebar"] a:hover {
             transform: translateX(2px);
             border-color: rgba(148, 163, 184, 0.20) !important;
             background: rgba(30, 41, 59, 0.38) !important;
+        }
+        section[data-testid="stSidebar"] [data-testid="stPageLink"] a:hover::before {
+            opacity: 1;
         }
         section[data-testid="stSidebar"] [data-testid="stPageLink"] a[aria-current="page"],
         section[data-testid="stSidebar"] a[aria-current="page"] {
@@ -136,15 +161,36 @@ def load_shared_theme():
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.38), rgba(91, 33, 182, 0.22)) !important;
             box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12) !important;
         }
+        .stButton > button,
+        .stDownloadButton > button {
+            position: relative !important;
+            overflow: hidden !important;
+            transform: translateY(0);
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease !important;
+        }
+        .stButton > button:hover,
+        .stDownloadButton > button:hover {
+            transform: translateY(-2px) !important;
+            filter: saturate(1.05) brightness(1.04);
+        }
+        .stButton > button:active,
+        .stDownloadButton > button:active {
+            transform: translateY(0) scale(0.99) !important;
+        }
         @media (max-width: 760px) {
-            section[data-testid="stSidebar"]:not([aria-expanded="false"]) {
-                width: 205px !important;
-                min-width: 205px !important;
-                max-width: 205px !important;
-            }
             section[data-testid="stSidebar"]:not([aria-expanded="false"]) > div:first-child {
-                width: 205px !important;
                 padding: 1rem 0.85rem !important;
+            }
+            .main .block-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            section[data-testid="stSidebar"] [data-testid="stPageLink"] a,
+            section[data-testid="stSidebar"] a {
+                height: 46px !important;
+                min-height: 46px !important;
+                gap: 10px !important;
+                padding: 0 12px !important;
             }
         }
         </style>
