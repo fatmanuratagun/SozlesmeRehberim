@@ -513,7 +513,7 @@ Her başlık altında kısa, taranabilir maddeler kullan. Gereksiz başlığı b
     return response.text
 
 
-st.set_page_config(page_title="Sözleşme Analizi AI", page_icon="💬", layout="wide")
+st.set_page_config(page_title="Sözleşme Analizi AI", page_icon="💬", layout="wide", initial_sidebar_state="collapsed")
 load_shared_theme()
 stil_yukle()
 sidebar_menu()

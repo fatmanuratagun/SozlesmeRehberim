@@ -255,7 +255,7 @@ if "analiz_hatasi" not in st.session_state:
     st.session_state.analiz_hatasi = ""
 
 # --- SAYFA ---
-st.set_page_config(page_title="Sözleşme Rehberim", page_icon="⚖️", layout="wide")
+st.set_page_config(page_title="Sözleşme Rehberim", page_icon="⚖️", layout="wide", initial_sidebar_state="collapsed")
 load_shared_theme()
 
 st.markdown(

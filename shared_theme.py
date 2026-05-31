@@ -47,7 +47,7 @@ def load_shared_theme():
         [data-testid="stSidebarNav"] {
             display: none !important;
         }
-        section[data-testid="stSidebar"] {
+        section[data-testid="stSidebar"]:not([aria-expanded="false"]) {
             width: 230px !important;
             min-width: 230px !important;
             max-width: 230px !important;
@@ -57,7 +57,7 @@ def load_shared_theme():
             box-shadow: 14px 0 36px rgba(0, 0, 0, 0.18) !important;
             backdrop-filter: blur(18px);
         }
-        section[data-testid="stSidebar"] > div:first-child {
+        section[data-testid="stSidebar"]:not([aria-expanded="false"]) > div:first-child {
             width: 230px !important;
             padding: 2.2rem 1.05rem 1.2rem !important;
         }
@@ -137,12 +137,12 @@ def load_shared_theme():
             box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12) !important;
         }
         @media (max-width: 760px) {
-            section[data-testid="stSidebar"] {
+            section[data-testid="stSidebar"]:not([aria-expanded="false"]) {
                 width: 205px !important;
                 min-width: 205px !important;
                 max-width: 205px !important;
             }
-            section[data-testid="stSidebar"] > div:first-child {
+            section[data-testid="stSidebar"]:not([aria-expanded="false"]) > div:first-child {
                 width: 205px !important;
                 padding: 1rem 0.85rem !important;
             }
