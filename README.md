@@ -8,12 +8,15 @@ Bu proje, dijital platformların karmaşık hukuki sözleşmelerini Üretken Yap
 🚀 Kurulum ve Çalıştırma (Yerelde Denemek İsteyenler İçin)
 Gerekli kütüphaneleri yükleyin:
 
-Bash
-pip install streamlit google-generativeai beautifulsoup4 requests pypdf python-docx
-Kodu çalıştırmak için terminale yazın:
+```bash
+pip install streamlit google-generativeai
+```
 
-Bash
+Kodu çalıştırmak için terminale yazın:
+```bash
 streamlit run Ana_Sayfa.py
+```
+
 🛠️ Kullanılan Teknolojiler
 Frontend: Streamlit
 
@@ -24,10 +27,11 @@ Web Scraping: BeautifulSoup & Requests
 Backend Dil: Python
 
 🔑 API Anahtarı Kurulumu
-Bu proje sözleşme analizi için Google Gemini API kullanmaktadır. Projeyi kendi bilgisayarınızda çalıştırmadan önce .streamlit klasörü içinde secrets.toml dosyası oluşturun:
-
-Ini, TOML
+Bu proje sözleşme analizi için Google Gemini API kullanmaktadır. 
+Projeyi kendi bilgisayarınızda çalıştırmadan önce .streamlit klasörü içinde secrets.toml dosyası oluşturun:
+```bash
 GEMINI_API_KEY = "BURAYA_KENDI_GEMINI_API_KEYINIZI_YAZIN"
+```
 👥 Geliştirici Ekip (X Team)
 Fatma Nur Atagün
 
