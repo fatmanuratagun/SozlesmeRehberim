@@ -74,24 +74,24 @@ def url_okuyucu(url):
 def pdf_fontlarini_hazirla():
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
+    from pathlib import Path
 
     normal_font = "Helvetica"
     bold_font = "Helvetica-Bold"
-    font_klasoru = Path("C:/Windows/Fonts")
-    normal_yol = font_klasoru / "arial.ttf"
-    bold_yol = font_klasoru / "arialbd.ttf"
+    
+    # GitHub ana dizinine yüklediğin arial.ttf dosyasını arıyoruz
+    normal_yol = Path("arial.ttf")
 
     if normal_yol.exists():
         pdfmetrics.registerFont(TTFont("ArialTR", str(normal_yol)))
         normal_font = "ArialTR"
-
-    if bold_yol.exists():
-        pdfmetrics.registerFont(TTFont("ArialTR-Bold", str(bold_yol)))
-        bold_font = "ArialTR-Bold"
+        # Ekstra bold font dosyası yüklemediğimiz için kalın başlıkları da düz fonta yönlendiriyoruz
+        bold_font = "ArialTR" 
 
     return normal_font, bold_font
 
 def analiz_pdf_olustur(analiz_metni):
+# ... (Altındaki analiz_pdf_olustur fonksiyonun ve kodun geri kalanı aynı şekilde kalacak, onlara hiç dokunma!)
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
